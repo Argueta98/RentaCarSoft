@@ -59,14 +59,14 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 
 body {
-  margin: 0;
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  text-align: left;
-  background-color: #fff;
+    margin: 0;
+    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color:white;
+    text-align: left;
+    background-color: #581845;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 abbr[title],
@@ -110,7 +110,7 @@ ol,
 ul,
 dl {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 ol ol,
@@ -121,7 +121,7 @@ ul ol {
 }
 
 dt {
-  font-weight: 700;
+  font-weight: 750;
 }
 
 dd {
@@ -145,7 +145,7 @@ small {
 sub,
 sup {
   position: relative;
-  font-size: 75%;
+  font-size: 85%;
   line-height: 0;
   vertical-align: baseline;
 }
@@ -161,7 +161,7 @@ sup {
 a {
   color: #007bff;
   text-decoration: none;
-  background-color: transparent;
+  background-color: white;
 }
 
 a:hover {
@@ -174,17 +174,17 @@ a:not([href]):not([class]) {
   text-decoration: none;
 }
 
-a:not([href]):not([class]):hover {
-  color: inherit;
-  text-decoration: none;
-}
+    a:not([href]):not([class]):hover {
+        color: #581845;
+        text-decoration: none;
+    }
 
 pre,
 code,
 kbd,
 samp {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 pre {
@@ -213,11 +213,11 @@ table {
 }
 
 caption {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  color: #6c757d;
-  text-align: left;
-  caption-side: bottom;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    color: #581845;
+    text-align: left;
+    caption-side: bottom;
 }
 
 th {
@@ -364,7 +364,7 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 550;
   line-height: 1.2;
   color: inherit;
 }
@@ -470,9 +470,9 @@ mark,
 }
 
 .blockquote-footer {
-  display: block;
-  font-size: 80%;
-  color: #6c757d;
+    display: block;
+    font-size: 80%;
+    color: #581845;
 }
 
 .blockquote-footer::before {
@@ -13844,7 +13844,7 @@ body.text-sm .control-sidebar {
 
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header > p {
   z-index: 5;
-  font-size: 17px;
+  font-size: 20px;
   margin-top: 10px;
 }
 

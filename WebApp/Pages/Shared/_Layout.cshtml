@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@ViewData["Title"] | Clean Architecture WebApp</title>
+    <title>@ViewData["Title"] | Rent - Cars</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -13,20 +13,20 @@
     <link rel="stylesheet" href="~/dist/css/adminlte.min.css">
     @await RenderSectionAsync("Styles", required: false)
 </head>
-<body class="hold-transition sidebar-mini layout-navbar-fixed">
+<body class="hold-transition sidebar-mini layout-navbar-fixed"  >
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light" color:black; style=" background-image: url(https://thumbs.dreamstime.com/b/fondo-abstracto-4847236.jpg)">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="javascript:;" role="button"><i class="fas fa-bars"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="javascript:;" role="button"><i class="fas fa-car-side"></i> MENU</a>
                 </li>
             </ul>
 
             <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto" >
                 <li class="nav-item">
                     <a class="nav-link" data-widget="fullscreen" href="javascript:;" role="button">
                         <i class="fas fa-expand-arrows-alt"></i>
@@ -36,11 +36,11 @@
         </nav>
         <!-- /.navbar -->
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <aside class="main-sidebar sidebar-dark-primary elevation-4" style="        background-image: url(https://thumbs.dreamstime.com/b/fondo-abstracto-4847236.jpg)">
             <!-- Brand Logo -->
             <a href="~/" class="brand-link">
-                <img src="~/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+            
+                <span class="brand-text font-weight-light">Nuestros Servicios</span>
             </a>
 
             <!-- Sidebar -->
@@ -48,24 +48,24 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="~/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img url=(https://cdn4.vectorstock.com/i/1000x1000/85/78/logo-for-car-rental-and-sales-vector-25468578.jpg) >
                     </div>
                     <div class="info">
-                        <a href="javascript:;" class="d-block">Alexander Pierce</a>
+                        <a href="javascript:;" class="d-block" style="color:black;">App Web Rent a Car</a>
                     </div>
                 </div>
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" style="color:black;" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                         with font-awesome or any other icon font library -->
-                        <li class="nav-header">CATALOGOS</li>
+                        <li class="nav-header" style="color:black;">CATALOGOS</li>
                         <li class="nav-item">
                             <a asp-area="Alumnos" asp-page="Index" class="nav-link" id="a-alumno">
-                                <i class="fas fa-user-friends"></i>
-                                <p>
-                                   Alumnos
+                                <i class="far fa-address-card" style="color:black;"></i>
+                                <p  style="color:black;">
+                                Clientes
                                 </p>
                             </a>
                         </li>
@@ -106,7 +106,7 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper"  style="        background-image: url(https://images.pexels.com/photos/5158108/pexels-photo-5158108.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940.png)" >
             @RenderBody()
         </div>
         <!-- /.content-wrapper -->
@@ -115,7 +115,7 @@
             <div class="float-right d-none d-sm-block">
                 <b>Version</b> 3.1.0-rc
             </div>
-            <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; 2021<a href="https://adminlte.io">DPWA</a>.</strong> All rights reserved.
         </footer>
 
         <!-- Control Sidebar -->

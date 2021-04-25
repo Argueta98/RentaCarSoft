@@ -1,0 +1,130 @@
+﻿@page
+@model WebApp.Areas.Auto.Pages.CreateModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Ingresar Auto";
+    Layout = "_Layout";
+}
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>@ViewData["Title"]</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a asp-area="" asp-page="Index">Inicio</a></li>
+                    <li class="breadcrumb-item">Sobre Nosotros</li>
+                    <li class="breadcrumb-item">Auto</li>
+                    <li class="breadcrumb-item active">@ViewData["Title"]</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col align-self-lg-end">
+                <a asp-area="Auto" asp-page="Index" class="btn btn-outline-info float-right"><i class="fas fa-arrow-left"></i> Volver al Listado</a>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Ingrese los  datos completos del Auto</div>
+            <div class="card-tools">
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <!-- form start -->
+        <form method="post" asp-action="Create" Autoscomplete="off" enctype="multipart/form-data">
+            <div class="card-body">
+                <div class="form-group">
+                    <label asp-for="Auto.Placa"></label>
+                    <input asp-for="Auto.Placa" class="form-control" />
+                    <span asp-validation-for="Auto.Placa" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Auto.Marca"></label>
+                    <input asp-for="Auto.Marca" class="form-control" />
+                    <span asp-validation-for="Auto.Marca" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Auto.Modelo"></label>
+                    <input asp-for="Auto.Modelo" class="form-control" />
+                    <span asp-validation-for="Auto.Modelo" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Auto.TipoAuto"></label>
+                    <select asp-for="Auto.TipoAuto" class="form-control">
+                        <option value="@ApplicationCore.Enum.TipoAuto.PickUp">@ApplicationCore.Enum.TipoAuto.PickUp</option>
+                        <option value="@ApplicationCore.Enum.TipoAuto.Sedan">@ApplicationCore.Enum.TipoAuto.Sedan</option>
+                        <option value="@ApplicationCore.Enum.TipoAuto.Camioneta">@ApplicationCore.Enum.TipoAuto.Camioneta</option>
+                        <option value="@ApplicationCore.Enum.TipoAuto.Deportivo">@ApplicationCore.Enum.TipoAuto.Deportivo</option>
+                    </select>
+                    <span asp-validation-for="Auto.TipoAuto" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Auto.Color"></label>
+                    <input asp-for="Auto.Color" class="form-control" />
+                    <span asp-validation-for="Auto.Color" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Auto.Combustible"></label>
+                    <input asp-for="Auto.Combustible" class="form-control" />
+                    <span asp-validation-for="Auto.Combustible" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Auto.Estado"></label>
+                    <select asp-for="Auto.Estado" class="form-control">
+                        <option value="@ApplicationCore.Enum.Estado.Disponible">@ApplicationCore.Enum.Estado.Disponible</option>
+                        <option value="@ApplicationCore.Enum.Estado.Rentado">@ApplicationCore.Enum.Estado.Rentado</option>
+                    </select>
+                    <span asp-validation-for="Auto.Estado" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" name="fileUpload" accept=".jpg, .jpeg, .png">
+                            <label class="custom-file-label" for="exampleInputFile">Escoger archivo</label>
+                        </div>
+                        <div class="input-group-append">
+                            <span class="input-group-text">Subir</span>
+                        </div>
+                    </div>
+                    <label></label>
+                </div>
+
+
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Guardar</button> &nbsp;
+                    <button type="reset" class="btn btn-warning"><i class="fas fa-eraser"></i> Limpiar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script type="text/javascript" language="javscript">
+        $.validator.unobtrusive.parse(document);
+        $(document).ready(function () {
+            $('#a-auto').addClass('active');
+        });
+    </script>
+}

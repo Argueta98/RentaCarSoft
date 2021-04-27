@@ -13,17 +13,17 @@ namespace WebApp.Areas.Cliente.Pages
 {
     public class CreateModel : PageModel
     {
-        private readonly MyRepository<Clientes> _repository;
+        private readonly MyRepository<ApplicationCore.Entities.Cliente> _repository;
 
         private INotyfService _notyfService { get; }
 
-        public CreateModel(MyRepository<Clientes> repository, INotyfService notyfService)
+        public CreateModel(MyRepository<ApplicationCore.Entities.Cliente> repository, INotyfService notyfService)
         {
             _repository = repository;
             _notyfService = notyfService;
         }
         [BindProperty]
-        public Clientes Cliente { get; set; }
+        public ApplicationCore.Entities.Cliente Cliente { get; set; }
         public void OnGet()
         {
         }

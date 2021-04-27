@@ -16,16 +16,16 @@ namespace WebApp.Areas.Cliente.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly MyRepository<Clientes> _repository;
+        private readonly MyRepository<ApplicationCore.Entities.Cliente> _repository;
         private INotyfService _notyfService { get; }
 
-        public IndexModel(MyRepository<Clientes> repository, INotyfService notyfService)
+        public IndexModel(MyRepository<ApplicationCore.Entities.Cliente> repository, INotyfService notyfService)
         {
             _repository = repository;
             _notyfService = notyfService;
         }
 
-        public List<Clientes> Cliente { get; set; }
+        public List<ApplicationCore.Entities.Cliente> Cliente { get; set; }
         public int[] DefaultPagesSizes => PaginationHelper.DefaultPagesSizes;
         public Pager Pager { get; set; }
         public string SearchString { get; set; }

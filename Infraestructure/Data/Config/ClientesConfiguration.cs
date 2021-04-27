@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infraestructure.Data.Config
 {
-    public class ClientesConfiguration : IEntityTypeConfiguration<Clientes>
+    public class ClientesConfiguration : IEntityTypeConfiguration<Cliente>
     {
-        public void Configure(EntityTypeBuilder<Clientes> builder)
+        public void Configure(EntityTypeBuilder<Cliente> builder)
         {
             builder.ToTable("Clientes");
 

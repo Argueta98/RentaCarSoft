@@ -1,0 +1,133 @@
+﻿@page
+@model WebApp.Areas.Auto.Pages.EditModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Editar Autos";
+    Layout = "_Layout";
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>@ViewData["Title"]</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a asp-area="" asp-page="Index">Inicio</a></li>
+                    <li class="breadcrumb-item">Catalogos</li>
+                    <li class="breadcrumb-item">Autos</li>
+                    <li class="breadcrumb-item active">@ViewData["Title"]</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col align-self-lg-end">
+                <a asp-area="Autos" asp-page="Index" class="btn btn-outline-info float-right"><i class="fas fa-arrow-left"></i> Volver al Listado</a>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</section>
+
+<section class="content">
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Edite su formulario correctamente</div>
+            <div class="card-tools">
+
+            </div>
+        </div>
+        <div class="card-body">
+            <!-- form start -->
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Autos.Id" />
+                <div class="form-group">
+                    <label asp-for="Autos.Placa"></label>
+                    <input asp-for="Autos.Placa" class="form-control" />
+                    <span asp-validation-for="Autos.Placa" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="Autos.Marca"></label>
+                    <input asp-for="Autos.Marca" class="form-control" />
+                    <span asp-validation-for="Autos.Marca" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Autos.Modelo"></label>
+                    <input asp-for="Autos.Modelo" class="form-control" />
+                    <span asp-validation-for="Autos.Modelo" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Autos.TipoAuto"></label>
+                    <select asp-for="Autos.TipoAuto" class="form-control">
+                        <option value="@ApplicationCore.Enum.TipoAuto.PickUp">@ApplicationCore.Enum.TipoAuto.PickUp</option>
+                        <option value="@ApplicationCore.Enum.TipoAuto.Sedan">@ApplicationCore.Enum.TipoAuto.Sedan</option>
+                        <option value="@ApplicationCore.Enum.TipoAuto.Camioneta">@ApplicationCore.Enum.TipoAuto.Camioneta</option>
+                        <option value="@ApplicationCore.Enum.TipoAuto.Deportivo">@ApplicationCore.Enum.TipoAuto.Deportivo</option>
+                    </select>
+                    <span asp-validation-for="Autos.TipoAuto" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Autos.Color"></label>
+                    <input asp-for="Autos.Color" class="form-control" />
+                    <span asp-validation-for="Autos.Color" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Autos.Combustible"></label>
+                    <input asp-for="Autos.Combustible" class="form-control" />
+                    <span asp-validation-for="Autos.Combustible" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Autos.Estado"></label>
+                    <select asp-for="Autos.Estado" class="form-control">
+                        <option value="@ApplicationCore.Enum.Estado.Disponible">@ApplicationCore.Enum.Estado.Disponible</option>
+                        <option value="@ApplicationCore.Enum.Estado.Rentado">@ApplicationCore.Enum.Estado.Rentado</option>
+                    </select>
+                    <span asp-validation-for="Autos.Estado" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" name="fileUpload" accept=".jpg, .jpeg, .png">
+                            <label class="custom-file-label" for="exampleInputFile">Escoger archivo</label>
+                        </div>
+                        <div class="input-group-append">
+                            <span class="input-group-text">Subir</span>
+                        </div>
+                    </div>
+                    <label></label>
+                </div>
+
+
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+</section>
+
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script type="text/javascript" language="javscript">
+        $.validator.unobtrusive.parse(document);
+        $(document).ready(function () {
+            $('#a-auto').addClass('active');
+        });
+    </script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

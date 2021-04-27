@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Specification
 {
-   public  class AutoSpec : Specification<Autos>
+   public  class AutoSpec : Specification<Auto>
     {
         public AutoSpec(AutoFilter filter)
         {

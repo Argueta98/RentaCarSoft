@@ -13,32 +13,39 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using WebApp.Models;
 
-namespace WebApp.Areas.Auto.Pages
+
+namespace WebApp.Areas.Alquiler.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly MyRepository<ApplicationCore.Entities.Auto> _repository;
+        private readonly MyRepository<ApplicationCore.Entities.Alquiler> _repository;
         private INotyfService _notyfService { get; }
-
-        public IndexModel(MyRepository<ApplicationCore.Entities.Auto> repository, INotyfService notyfService)
+        public IndexModel(MyRepository<ApplicationCore.Entities.Alquiler> repository, INotyfService notyfService)
         {
             _repository = repository;
             _notyfService = notyfService;
         }
 
-        public List<ApplicationCore.Entities.Auto> Auto { get; set; }
+        public List<ApplicationCore.Entities.Alquiler> Alquileres { get; set; }
+
+        // public List<Alquiler> Alquiler { get; set; }
         public UIPaginationModel UIPagination { get; set; }
 
-        public async Task OnGetAsync(string searchString, int? currentPage, int? sizePage)
+        public async Task OnGetAsync(string searchString, string typeFilter, int? currentPage, int? sizePage)
         {
-            var totalItems = await _repository.CountAsync(new AutoSpec(new AutoFilter { Marca = searchString, LoadChildren = false, IsPagingEnabled = true }));
+            if (typeFilter == "")
+                typeFilter = "Cliente";
+
+            var totalItems = await _repository.CountAsync(new AlquilerSpec(new AlquilerFilter { LoadChildren = false, IsPagingEnabled = true }));
             UIPagination = new UIPaginationModel(currentPage, searchString, sizePage, totalItems);
 
-            Auto = await _repository.ListAsync(new AutoSpec(
-                new AutoFilter
+            Alquileres = await _repository.ListAsync(new AlquilerSpec(
+                new AlquilerFilter
                 {
                     IsPagingEnabled = true,
-                    Marca = UIPagination.SearchString,
+                    TypeFilter = typeFilter,
+                    SearchString = searchString,
+                    // = UIPagination.SearchString,
                     SizePage = UIPagination.GetSizePage,
                     Page = UIPagination.GetCurrentPage
                 })

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Enum
 {
-   public  enum TipoAuto
+    public enum TipoAuto
     {
         [Display(Name = "Pick Up")]
         PickUp,
@@ -18,4 +18,5 @@ namespace ApplicationCore.Enum
         [Display(Name = "Deportivo")]
         Deportivo
     }
+
 }

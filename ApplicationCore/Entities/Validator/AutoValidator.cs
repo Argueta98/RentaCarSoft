@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Entities.Validator
 {
-    public class AutoValidator : AbstractValidator<Autos>
+    public class AutoValidator : AbstractValidator<Auto>
     {
         public AutoValidator()
         {
@@ -31,7 +31,6 @@ namespace ApplicationCore.Entities.Validator
            .Length(3, 50).WithMessage("El Apellido debe contener entre 3 y 10 caracteres");
 
             RuleFor(x => x.Estado).IsInEnum().WithMessage("Ingrese un Estado valido");
-
 
         }
     }

@@ -16,11 +16,11 @@ namespace WebApp.Areas.Auto.Pages
 {
     public class CreateModel : PageModel
     {
-        private readonly MyRepository<Autos> _repository;
+        private readonly MyRepository<ApplicationCore.Entities.Auto> _repository;
         private INotyfService _notyfService { get; }
         private readonly IFileUploadService _fileUploadService;
 
-        public CreateModel(MyRepository<Autos> repository, INotyfService notyfService, IFileUploadService fileUploadService)
+        public CreateModel(MyRepository<ApplicationCore.Entities.Auto> repository, INotyfService notyfService, IFileUploadService fileUploadService)
         {
             _repository = repository;
             _notyfService = notyfService;
@@ -28,7 +28,7 @@ namespace WebApp.Areas.Auto.Pages
         }
 
         [BindProperty]
-        public Autos Auto { get; set; }
+        public ApplicationCore.Entities.Auto Auto { get; set; }
 
         public void OnGet()
         {

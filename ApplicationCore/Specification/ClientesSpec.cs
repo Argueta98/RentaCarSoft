@@ -4,7 +4,7 @@ using ApplicationCore.Specification.Filters;
 using Ardalis.Specification;
 namespace ApplicationCore.Specification
 {
-    public class ClientesSpec : Specification<Clientes>
+    public class ClientesSpec : Specification<Cliente>
     {
         public ClientesSpec(ClienteFilter filter)
         {

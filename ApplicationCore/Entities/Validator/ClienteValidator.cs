@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Entities.Validator
 {
-    public class ClienteValidator : AbstractValidator<Clientes>
+    public class ClienteValidator : AbstractValidator<Cliente>
     {
         public ClienteValidator()
         {
@@ -31,6 +31,7 @@ namespace ApplicationCore.Entities.Validator
             RuleFor(x => x.NumLicencia).NotNull().WithMessage("No dejar Vacio");
 
             RuleFor(x => x.Direccion).NotNull().WithMessage("Direccion es requerida");
+
         }
     }
 }

@@ -13,15 +13,15 @@ namespace WebApp.Areas.Cliente.Pages
 {
     public class EditModel : PageModel
     {
-        private readonly MyRepository<Clientes> _repository;
+        private readonly MyRepository<ApplicationCore.Entities.Cliente> _repository;
         private INotyfService _notyfService { get; }
-        public EditModel(MyRepository<Clientes> repository, INotyfService notyfService)
+        public EditModel(MyRepository<ApplicationCore.Entities.Cliente> repository, INotyfService notyfService)
         {
             _repository = repository;
             _notyfService = notyfService;
         }
         [BindProperty]
-        public Clientes Cliente { get; set; }
+        public ApplicationCore.Entities.Cliente Cliente { get; set; }
  
 
       
@@ -52,19 +52,19 @@ namespace WebApp.Areas.Cliente.Pages
                 {
                     return NotFound();
                 }
-                if(await TryUpdateModelAsync<Clientes>(clienteToUpdate, 
+                if(await TryUpdateModelAsync(clienteToUpdate, 
                     "Cliente",
-                    s =>s.DUI,
-                    s =>s.Nombres,
-                    s =>s.Apellidos,
-                    s =>s.Genero,
-                    s =>s.Telefono,
-                    s =>s.NumLicencia,
+                    s => s.DUI,
+                    s => s.Nombres,
+                    s => s.Apellidos,
+                    s => s.Genero,
+                    s => s.Telefono,
+                    s => s.NumLicencia,
                     s => s.Direccion))
                 {
                     await _repository.SaveChangesAsync();
                     _notyfService.Success("Se ha guardado con exito");
-                    return RedirectToPage("./Index");
+                    return base.RedirectToPage("./Index");
                 }
             }
             catch(Exception ex)

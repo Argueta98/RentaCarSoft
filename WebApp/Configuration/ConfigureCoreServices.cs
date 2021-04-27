@@ -20,6 +20,7 @@ namespace WebApp.Configuration
             services.AddSingleton<IUriComposer>(new UriComposer(configuration.Get<ApplicationSettings>()));
             services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
             services.AddScoped<IFileSystem, WebFileSystem>();
+            services.AddScoped<ICalculadoraService, CalculadoraService>();
             return services;
         }
 

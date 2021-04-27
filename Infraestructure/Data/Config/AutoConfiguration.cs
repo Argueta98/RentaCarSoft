@@ -8,9 +8,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infraestructure.Data.Config
 {
-    public class AutoConfiguration : IEntityTypeConfiguration<Autos>
+    public class AutoConfiguration : IEntityTypeConfiguration<Auto>
     {
-        public void Configure(EntityTypeBuilder<Autos> builder)
+        public void Configure(EntityTypeBuilder<Auto> builder)
         {
             builder.ToTable("Auto");
 
@@ -43,6 +43,7 @@ namespace Infraestructure.Data.Config
             builder.Property(ci => ci.Estado);
 
             builder.Property(ci => ci.Fotografia);
+
 
         }
     }

@@ -9,13 +9,25 @@ namespace ApplicationCore.Services
 {
     public class CalculadoraService : ICalculadoraService
     {
-        public decimal CalcularPrecioAlquiler(DateTime FechaInicio, DateTime FechaFin, PrecioAlquiler precio)
+        public decimal CalcularPrecioAlquiler(DateTime FechaInicio, DateTime FechaFin, TipoAuto precio)
         {
+            // TimeSpan Total = FechaInicio - FechaFin;
+            // var dias = Total.Days;
+           
+
+            int tiempoTotal = Convert.ToInt32((FechaInicio - FechaFin).TotalDays);
+            //double totalDias = tiempoTotal.TotalDays;
+
+
+            int total = tiempoTotal * Convert.ToInt32(precio.ToString());
+
+            return total;
+
+
             //cALCULARlOSDIAS ENTRE FEHCHA INICIO Y FIN
             // 20 DIAS
             // PRECIO = TARIFA * DIAS
             //RETURN DEL PRECIO;
-            return 0.0m;
         }
     }
 }

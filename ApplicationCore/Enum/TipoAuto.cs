@@ -7,16 +7,22 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Enum
 {
-    public enum TipoAuto
+    public enum TipoAuto : int
     {
+
+        //PickUp = 30,
+        //Sedan = 40,
+        //Camioneta = 50,
+        //Deportivo = 6
+
         [Display(Name = "Pick Up")]
-        PickUp,
+        PickUp = 30,
         [Display(Name = "Sedan")]
-        Sedan,
+        Sedan= 40,
         [Display(Name = "Camioneta")]
-        Camioneta,
+        Camioneta= 50,
         [Display(Name = "Deportivo")]
-        Deportivo
+        Deportivo=60
     }
 
 }

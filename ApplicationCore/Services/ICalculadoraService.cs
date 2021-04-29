@@ -9,6 +9,6 @@ namespace ApplicationCore.Services
 {
     public interface ICalculadoraService
     {
-        decimal CalcularPrecioAlquiler(DateTime FechaInicio, DateTime FechaFin, PrecioAlquiler precio);
+        decimal CalcularPrecioAlquiler(DateTime FechaInicio, DateTime FechaFin, TipoAuto precio);
     }
 }

@@ -6,12 +6,25 @@
     Layout = "_Layout";
 }
 
+<style>
+    body {
+        color: #fff;
+        text-decoration-line: inherit;
+    }
+    .titulo {
+        color: #fff;
+        text-decoration-line: overline;
+    }
+    .card-title {
+        color: #000;
+    }
+</style>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>@ViewData["Title"]</h1>
+                <h1 class="titulo">@ViewData["Title"]</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">

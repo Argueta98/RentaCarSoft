@@ -19,9 +19,10 @@ namespace WebApp.Areas.Alquiler.Pages
     public class CreateModel : PageModel
     {
         private readonly MyRepository<ApplicationCore.Entities.Alquiler> _repository;
+        
         private INotyfService _notyfService { get; }
         private readonly ICalculadoraService _calculadoraServices;
-        public CreateModel(MyRepository<ApplicationCore.Entities.Alquiler> repository, INotyfService notyfService, ICalculadoraService calculadoraServices)
+        public CreateModel(MyRepository<ApplicationCore.Entities.Alquiler> repository,  INotyfService notyfService, ICalculadoraService calculadoraServices)
         {
             _repository = repository;
             _notyfService = notyfService;
@@ -44,8 +45,7 @@ namespace WebApp.Areas.Alquiler.Pages
                     //Alumno.Fotografia = await _fileUploadService.SaveFileOnAWSS3(fileUpload, Alumno.NombreFotografia(), "mycleanarchitecturebucket");
                     // Auto.Fotografia = await _fileUploadService.SaveFileOnDisk(fileUpload, Auto.NombreFotografia(), "auto");
 
-                    Alquileres.PrecioAlquiler =
-                    await _calculadoraServices.CalcularPrecioAlquiler(Alquileres.FechaInicio, Alquileres.FechaFinal, Alquileres.Auto.TipoAuto.GetType(int));
+                  //  await _calculadoraServices.CalcularPrecioAlquiler(Alquileres.FechaInicio, Alquileres.FechaFinal, Alquileres.Auto.TipoAuto.GetType(int));
                     await _repository.AddAsync(Alquileres);
                     _notyfService.Success("Auto agregado exitosamente");
                 }

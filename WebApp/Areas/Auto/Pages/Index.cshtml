@@ -73,6 +73,7 @@
                     <tr>
                         <th style="width:8%;">Id</th>
                         <th>Placa</th>
+                        <th>Ver Foto</th>
                         <th>Marca</th>
                         <th>Modelo</th>
                         <th>Tipo Auto</th>
@@ -91,11 +92,33 @@
                                 <td style="width:8%;">@item.Id</td>
                                 <td>@item.Placa</td>
                                 <td class="text-wrap">
-                                    <center>
-                                        <img alt="@item.Descripcion()" class="img-fluid img-thumbnail img-size-84" src="@item.Fotografia">
-                                        &nbsp;@item.Descripcion()
-                                    </center>
+                                    @*<center>
+            <img alt="@item.Descripcion()" class="img-fluid img-thumbnail img-size-84" src="@item.Fotografia">
+            &nbsp;@item.Descripcion()
+        </center>*@
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MostrarAuto">Ver Auto</button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="MostrarAuto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">@item.Descripcion()</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img class="img-fluid img-thumbnail img-size-84"  src="@item.Fotografia"/>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                     
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
+                                <td>@item.Marca</td>
                                 <td>@item.Modelo</td>
                                 <td>@item.TipoAuto</td>
                                 <td>@item.Color</td>
@@ -126,6 +149,10 @@
             <partial name="_PaginationUI" model="Model.UIPagination" />
         </div>
     </div>
+
+ 
+    
+
 </section>
 @section Scripts{
     <!-- Pager -->

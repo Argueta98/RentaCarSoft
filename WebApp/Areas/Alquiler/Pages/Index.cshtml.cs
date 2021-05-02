@@ -34,9 +34,9 @@ namespace WebApp.Areas.Alquiler.Pages
         public async Task OnGetAsync(string searchString, string typeFilter, int? currentPage, int? sizePage)
         {
             if (typeFilter == "")
-                typeFilter = "Cliente";
+                typeFilter = "Alquiler";
 
-            var totalItems = await _repository.CountAsync(new AlquilerSpec(new AlquilerFilter { LoadChildren = false, IsPagingEnabled = true }));
+            var totalItems = await _repository.CountAsync(new AlquilerSpec(new AlquilerFilter { LoadChildren = true, IsPagingEnabled = true }));
             UIPagination = new UIPaginationModel(currentPage, searchString, sizePage, totalItems);
 
             Alquileres = await _repository.ListAsync(new AlquilerSpec(
@@ -47,7 +47,8 @@ namespace WebApp.Areas.Alquiler.Pages
                     SearchString = searchString,
                     // = UIPagination.SearchString,
                     SizePage = UIPagination.GetSizePage,
-                    Page = UIPagination.GetCurrentPage
+                    Page = UIPagination.GetCurrentPage,
+                    LoadChildren = true
                 })
              );
         }

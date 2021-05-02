@@ -1,5 +1,7 @@
 ﻿using ApplicationCore.Interfaces;
 using Ardalis.Specification.EntityFrameworkCore;
+using System;
+using System.Threading.Tasks;
 
 namespace Infraestructure.Data
 {
@@ -11,5 +13,7 @@ namespace Infraestructure.Data
         {
             _dbContext = dbContext;
         }
+
+      
     }
 }

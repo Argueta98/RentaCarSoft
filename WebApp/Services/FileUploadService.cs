@@ -34,7 +34,7 @@ namespace WebApp.Services
                 }
                 return string.IsNullOrEmpty(urlFotografia) ? null : urlFotografia;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogWarning(ex.Message);
                 return null;
@@ -42,7 +42,7 @@ namespace WebApp.Services
         }
 
 
-        public async Task<string> SaveFileOnDisk(IFormFile file,string fileName, string folderDestination)
+        public async Task<string> SaveFileOnDisk(IFormFile file, string fileName, string folderDestination)
         {
             try
             {
@@ -61,14 +61,15 @@ namespace WebApp.Services
                     Directory.CreateDirectory(folderDirectory);
                 }
 
-                await using(var fs = new FileStream(path, FileMode.Create, FileAccess.Write))
+                await using (var fs = new FileStream(path, FileMode.Create, FileAccess.Write))
                 {
                     memoryStream.WriteTo(fs);
                     memoryStream.WriteTo(fs);
                 }
-                return $"https://localhost:44356/uploads/" + $"{folderDestination}/{fileName}/{fileInfo.Extension}";
+
+                return $"https://localhost:44356/uploads/" + $"{folderDestination}/{fileName}{fileInfo.Extension}";
             }
-            catch ( Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogWarning(ex.Message);
                 return null;

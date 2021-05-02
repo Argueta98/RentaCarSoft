@@ -6,7 +6,7 @@
     Layout = "_Layout";
 }
 
-<!--<section class="content-header">
+<section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
@@ -26,80 +26,80 @@
                 <a asp-area="Cliente" asp-page="Index" class="btn btn-outline-info float-right"><i class="fas fa-arrow-left"></i> Volver al Listado</a>
             </div>
         </div>
-    </div>-->
-    <!-- /.container-fluid -->
-<!--</section>
+    </div>
+    @*//.container-fluid*@ 
+</section>
 
-<section class="content">-->
-    <!-- Default box -->
-    <!--<div class="card">
+<section class="content">
+    @*// Default box*@ 
+    <div class="card">
         <div class="card-header">
             <div class="card-title">Llene su formulario correctamente</div>
             <div class="card-tools">
 
             </div>
         </div>
-        <div class="card-body">-->
-            <!-- form start -->
-            <!--<form method="post" asp-action="Create" autocomplete="off">
+        <div class="card-body">
+            @*// form start*@ 
+            <form method="post" asp-action="Create"  Autoscomplete="off" enctype="multipart/form-data">
                 <div class="card-body">
+
                     <div class="form-group">
                         <label asp-for="Alquileres.Cliente"></label>
-                        <select asp-for="Alquileres.Cliente.NombreCompleto" class="form-control">
-                            <option value="">@ApplicationCore.Enum.Genero.Masculino</option>
+                        @*<select asp-for="Alquileres.ClienteId" class="form-control">
+                @foreach( int item in ) {
+                }
+                <option value="@ApplicationCore.Enum.PrecioAlquiler.Camioneta">@ApplicationCore.Enum.PrecioAlquiler.Camioneta</option>
+
+
+            </select>*@
+                        <input asp-for="Alquileres.ClienteId" class="form-control" />
+                        <span asp-validation-for="Alquileres.Cliente" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Alquileres.Auto"></label>
+                        <input asp-for="Alquileres.AutoId" class="form-control" />
+                        <span asp-validation-for="Alquileres.AutoId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Alquileres.FechaInicio"></label>
+                        <input asp-for="Alquileres.FechaInicio" class="form-control" />
+                        <span asp-validation-for="Alquileres.FechaInicio" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Alquileres.FechaInicio"></label>
+                        <input asp-for="Alquileres.FechaInicio" class="form-control" />
+                        <span asp-validation-for="Alquileres.FechaInicio" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Alquileres.PrecioAlquiler"></label>
+                        <select asp-for="Alquileres.PrecioAlquiler" class="form-control"  >
+                            <option value="@ApplicationCore.Enum.PrecioAlquiler.Camioneta">@ApplicationCore.Enum.PrecioAlquiler.Camioneta</option>
+                            <option value="@ApplicationCore.Enum.PrecioAlquiler.Deportivo">@ApplicationCore.Enum.PrecioAlquiler.Deportivo</option>
+                            <option value="@ApplicationCore.Enum.PrecioAlquiler.PickUp">@ApplicationCore.Enum.PrecioAlquiler.PickUp</option>
+                            <option value="@ApplicationCore.Enum.PrecioAlquiler.Sedan">@ApplicationCore.Enum.PrecioAlquiler.Sedan</option>
+
                         </select>
-                        <span asp-validation-for="Cliente.Genero" class="text-danger"></span>
+                        
                     </div>
-                    <div class="form-group">
-                        <label asp-for="Cliente.Nombres"></label>
-                        <input asp-for="Cliente.Nombres" class="form-control" />
-                        <span asp-validation-for="Cliente.Nombres" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Cliente.Apellidos"></label>
-                        <input asp-for="Cliente.Apellidos" class="form-control" />
-                        <span asp-validation-for="Cliente.Apellidos" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Cliente.Genero"></label>
-                        <select asp-for="Cliente.Genero" class="form-control">
-                            <option value="@ApplicationCore.Enum.Genero.Masculino">@ApplicationCore.Enum.Genero.Masculino</option>
-                            <option value="@ApplicationCore.Enum.Genero.Femenino">@ApplicationCore.Enum.Genero.Femenino</option>
-                        </select>
-                        <span asp-validation-for="Cliente.Genero" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Cliente.Telefono"></label>
-                        <input asp-for="Cliente.Telefono" class="form-control" />
-                        <span asp-validation-for="Cliente.Telefono" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Cliente.NumLicencia"></label>
-                        <input asp-for="Cliente.NumLicencia" class="form-control" />
-                        <span asp-validation-for="Cliente.NumLicencia" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Cliente.Direccion"></label>
-                        <input asp-for="Cliente.Direccion" class="form-control" />
-                        <span asp-validation-for="Cliente.Direccion" class="text-danger"></span>
-                    </div>
-                </div>-->
-                <!-- /.card-body -->
-                <!--<div class="card-footer">
+                </div>
+                 @*card-body*@ 
+                <div class="card-footer">
                     <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Guardar</button> &nbsp;
                     <button type="reset" class="btn btn-warning"><i class="fas fa-eraser"></i> Limpiar</button>
                 </div>
             </form>
         </div>
-</section>-->
-@*@section Scripts{
+</section>
+@section Scripts{
     <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
     <script type="text/javascript" language="javscript">
         $.validator.unobtrusive.parse(document);
         $(document).ready(function () {
-            $('#a-cliente').addClass('active');
+            $('#a-alquiler').addClass('active');
         });
     </script>
-}*@
+}
 

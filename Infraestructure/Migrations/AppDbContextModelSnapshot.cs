@@ -26,13 +26,13 @@ namespace Infraestructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AutoId")
+                    b.Property<int>("AutoId")
                         .HasColumnType("int");
 
                     b.Property<int>("CantidadTotal")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ClienteId")
+                    b.Property<int>("ClienteId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("FechaFinal")
@@ -40,12 +40,6 @@ namespace Infraestructure.Migrations
 
                     b.Property<DateTime>("FechaInicio")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("IdAuto")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdCliente")
-                        .HasColumnType("int");
 
                     b.Property<int>("PrecioAlquiler")
                         .HasColumnType("int");
@@ -186,11 +180,15 @@ namespace Infraestructure.Migrations
                 {
                     b.HasOne("ApplicationCore.Entities.Auto", "Auto")
                         .WithMany("Alquiler")
-                        .HasForeignKey("AutoId");
+                        .HasForeignKey("AutoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("ApplicationCore.Entities.Cliente", "Cliente")
                         .WithMany("Alquiler")
-                        .HasForeignKey("ClienteId");
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Auto");
 

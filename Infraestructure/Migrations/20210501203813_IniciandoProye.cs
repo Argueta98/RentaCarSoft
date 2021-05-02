@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infraestructure.Migrations
 {
-    public partial class CorrigiendoRelaciones : Migration
+    public partial class IniciandoProye : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -69,10 +69,8 @@ namespace Infraestructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IdCliente = table.Column<int>(type: "int", nullable: false),
-                    ClienteId = table.Column<int>(type: "int", nullable: true),
-                    IdAuto = table.Column<int>(type: "int", nullable: false),
-                    AutoId = table.Column<int>(type: "int", nullable: true),
+                    ClienteId = table.Column<int>(type: "int", nullable: false),
+                    AutoId = table.Column<int>(type: "int", nullable: false),
                     FechaInicio = table.Column<DateTime>(type: "datetime2", nullable: false),
                     FechaFinal = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PrecioAlquiler = table.Column<int>(type: "int", nullable: false),
@@ -86,13 +84,13 @@ namespace Infraestructure.Migrations
                         column: x => x.AutoId,
                         principalTable: "Auto",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Alquiler_Clientes_ClienteId",
                         column: x => x.ClienteId,
                         principalTable: "Clientes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

@@ -17,10 +17,10 @@ namespace Infraestructure.Data.Config
 
             builder.HasKey(ci => ci.Id);
 
-              builder.Property(ci => ci.IdCliente)
+              builder.Property(ci => ci.ClienteId)
              .IsRequired();
 
-             builder.Property(ci => ci.IdAuto)
+             builder.Property(ci => ci.AutoId)
              
                 .IsRequired();
 

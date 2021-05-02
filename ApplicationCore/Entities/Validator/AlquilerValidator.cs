@@ -13,9 +13,9 @@ namespace ApplicationCore.Entities.Validator
         {
             RuleFor(x => x.Id).NotNull();
 
-            RuleFor(x => x.IdCliente).NotNull();
+            RuleFor(x => x.ClienteId).NotNull();//Aqui modifique
 
-            RuleFor(x => x.IdAuto).NotNull();
+            RuleFor(x => x.AutoId).NotNull(); //Aqui modifique
 
             RuleFor(x => x.FechaInicio).NotNull().WithMessage("Fecha es requerida");
 

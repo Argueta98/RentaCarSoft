@@ -40,17 +40,26 @@ namespace WebApp.Areas.Auto.Pages
                 return NotFound();
             }
 
+
             return Page();
         }
         public async Task<IActionResult> OnPostAsync(int id)
         {
             try
             {
+                //var autosDelete = await _repository.GetByIdAsync(id);
                 var autoToUpdate = await _repository.GetByIdAsync(id);
                 if (autoToUpdate == null)
                 {
                     return NotFound();
                 }
+                //if(autosDelete == null)
+                //{
+                //    await _repository.DeleteAsync(autosDelete);
+                //    await _repository.SaveChangesAsync();
+
+                //}
+
                 if (await TryUpdateModelAsync(autoToUpdate,
                     "Autos",
                     s => s.Placa,

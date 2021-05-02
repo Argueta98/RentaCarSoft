@@ -11,9 +11,9 @@ namespace ApplicationCore.Entities
    public  class Alquiler
     {
         public int Id { get; set; }
-        public int IdCliente { get; set; }
+        public int ClienteId { get; set; } //Aqui modifique
         public Cliente Cliente { get; set; }
-        public int IdAuto { get; set; }
+        public int AutoId { get; set; } //Aqui modifique
         public Auto Auto { get; set; }
 
         [DataType(DataType.Date)]
